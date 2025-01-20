@@ -960,8 +960,7 @@ void RunLenIntEncoder::computeZigZagLiterals() {
 }
 
 long RunLenIntEncoder::zigzagEncode(long val) {
-    unsigned long uval = static_cast<unsigned long>(val);
-    return (uval << 1) ^ (val >> 63);
+    return (val << 1) ^ (val >> 63);
 }
 
 void RunLenIntEncoder::writeVulong(std::shared_ptr<ByteBuffer> output, long value) {

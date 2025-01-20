@@ -22,6 +22,9 @@ public:
     void set(int elementNum, long ts);
     ~TimestampColumnVector();
     void print(int rowCount) override;
+    void add(std::string &value) override;
+    void add(int64_t value) override;
+    void ensureSize(uint64_t size, bool preserveData) override;
     void close() override;
 private:
     bool isLong;
